@@ -1,0 +1,134 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import { Star, Quote, ArrowRight } from "lucide-react";
+import SectionHeader from "@/components/ui/SectionHeader";
+import Badge from "@/components/ui/Badge";
+import NewsletterSection from "@/components/home/NewsletterSection";
+
+export const metadata: Metadata = {
+  title: "Student Success Stories",
+  description:
+    "Read success stories from PIN Consultancy students who passed their ICAN, ACCA, CITN, CISA, ATS, and IFRS examinations. Real outcomes from real professionals.",
+};
+
+const testimonials = [
+  { name: "Adaeze Okonkwo",    role: "Chartered Accountant, EY Nigeria",       programme: "ICAN",          result: "Professional Level — First Attempt",   year: "2024", initials: "AO", color: "#1E3A8A", stars: 5, quote: "I had tried the ICAN professional level twice with another tuition provider. When I enrolled at PIN, everything changed. The tutors broke down complex topics with clinical precision. The mock exams alone were worth the entire tuition fee. I passed all three papers in one diet." },
+  { name: "Emeka Nwosu",       role: "Tax Manager, KPMG Nigeria",              programme: "CITN",          result: "Passed with Distinction",              year: "2024", initials: "EN", color: "#16A34A", stars: 5, quote: "The CITN programme at PIN is exceptionally well structured. The tax law lectures were the best I have attended — detailed, practical, and directly exam-relevant. My tutor had actual tax practice experience which made a real difference." },
+  { name: "Chisom Ejike",      role: "ACCA Affiliate, Deloitte Nigeria",       programme: "ACCA",          result: "Strategic Level — All Papers Cleared",  year: "2023", initials: "CE", color: "#7C3AED", stars: 5, quote: "Balancing work and ACCA studies is genuinely difficult. PIN's weekend and evening classes were designed for people like me. The online resources — especially the CBT practice tests — were available whenever I needed them." },
+  { name: "Oluwafemi Adeleke", role: "Financial Controller, Access Bank",       programme: "ICAN",          result: "ICAN Fellow — Fully Qualified",         year: "2023", initials: "OA", color: "#0891B2", stars: 5, quote: "I have been a student at PIN from ATS through to ICAN Fellowship. The consistency in quality, the approachability of tutors, and the structured resources have been remarkable across every level." },
+  { name: "Ngozi Ibe",         role: "IT Audit Specialist, Zenith Bank",        programme: "CISA",          result: "CISA Certified — First Attempt",        year: "2024", initials: "NI", color: "#D97706", stars: 5, quote: "The CISA programme content can be overwhelming without the right guidance. PIN's structured study plan and the quality of the practice tests ensured I arrived at the exam fully prepared." },
+  { name: "Kelechi Okafor",    role: "Senior Accountant, NNPC",                 programme: "ICAN",          result: "Skills Level — All 5 Papers",          year: "2024", initials: "KO", color: "#1E3A8A", stars: 5, quote: "The Financial Reporting and Performance Management classes at PIN were outstanding. The tutor's ability to connect theory with real-world applications genuinely helped me understand the material rather than just memorise it." },
+  { name: "Tolu Fashola",      role: "Finance Analyst, MTN Nigeria",            programme: "ACCA",          result: "Applied Skills Level Complete",         year: "2023", initials: "TF", color: "#16A34A", stars: 5, quote: "I chose PIN because of their track record. I was not disappointed. The study materials are comprehensive and up-to-date, the tutors are accessible, and the mock exams are genuinely challenging — which is exactly what you need." },
+  { name: "Amara Diallo",      role: "Finance Controller, Nestlé Nigeria",      programme: "Diploma IFRS",  result: "DipIFRS — Distinction",                year: "2024", initials: "AD", color: "#0891B2", stars: 5, quote: "I enrolled in the Diploma in IFRS because our organisation was transitioning reporting standards. The programme at PIN was practical, focused, and immediately applicable. I passed with distinction." },
+  { name: "Segun Badmus",      role: "Audit Manager, PwC Nigeria",              programme: "ICAN",          result: "Foundation to Professional — Completed", year: "2022", initials: "SB", color: "#7C3AED", stars: 5, quote: "PIN was with me through every level of ICAN — Foundation, Skills, and Professional. Three different tutors, same quality, same commitment. I am now a qualified chartered accountant and I credit PIN entirely for my success." },
+];
+
+const stats = [
+  { v: "5,000+", l: "Total Graduates" },
+  { v: "87%",    l: "First-Attempt Pass Rate" },
+  { v: "94%",    l: "Student Satisfaction" },
+  { v: "16+",    l: "Years of Results" },
+];
+
+export default function TestimonialsPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        {/* Hero */}
+        <section
+          className="relative pt-40 pb-16"
+          style={{ background: "linear-gradient(135deg, #0F2055 0%, #1a3070 50%, #152D6E 100%)" }}
+        >
+          <div className="container-pin relative z-10 text-center">
+            <span className="section-label section-label-gold mb-6 inline-flex">Success Stories</span>
+            <h1 className="font-heading font-extrabold text-white text-4xl md:text-5xl leading-tight mb-4">
+              Thousands of Professionals.<br />One Proven Path.
+            </h1>
+            <p className="text-white/65 text-lg max-w-xl mx-auto">
+              PIN graduates are chartered accountants, tax managers, IT auditors, and finance
+              directors at Nigeria&apos;s leading organisations. These are their stories.
+            </p>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
+            <svg viewBox="0 0 1440 40" fill="none" className="w-full">
+              <path d="M0 40 L0 20 Q720 0 1440 20 L1440 40 Z" fill="white" />
+            </svg>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <section className="py-12 bg-white border-b border-[#F1F3F5]">
+          <div className="container-pin">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              {stats.map(({ v, l }) => (
+                <div key={l}>
+                  <p className="font-heading font-extrabold text-[#1E3A8A] text-3xl mb-1">{v}</p>
+                  <p className="text-[#6C757D] text-sm font-medium">{l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials grid */}
+        <section className="section-py bg-[#F8F9FA]">
+          <div className="container-pin">
+            <SectionHeader label="Student Stories" title="In Their Own Words" align="center" />
+            <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonials.map((t) => (
+                <div key={t.name} className="bg-white rounded-2xl border border-[#E9ECEF] p-6 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col">
+                  <Quote className="w-8 h-8 text-[#DBEAFE] mb-4" />
+                  <p className="text-[#343A40] text-sm leading-relaxed italic flex-1 mb-5">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div>
+                    <div className="flex items-center gap-1 mb-3">
+                      {Array.from({ length: t.stars }).map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-[#F4C430] text-[#F4C430]" />
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-xs flex-shrink-0" style={{ backgroundColor: t.color }}>
+                        {t.initials}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-[#222222] text-sm">{t.name}</p>
+                        <p className="text-[#ADB5BD] text-xs">{t.role}</p>
+                      </div>
+                    </div>
+                    <div className="mt-3 flex items-center justify-between">
+                      <Badge variant="blue" size="sm">{t.programme}</Badge>
+                      <span className="text-xs text-[#16A34A] font-semibold">{t.result}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 bg-white">
+          <div className="container-pin text-center">
+            <h2 className="font-heading font-bold text-[#222222] text-3xl mb-4">
+              Your Story Starts Here
+            </h2>
+            <p className="text-[#6C757D] text-base max-w-xl mx-auto mb-8">
+              Join thousands of professionals who took the decision to invest in their qualification
+              and transformed their careers with PIN.
+            </p>
+            <Link href="/apply" className="inline-flex items-center gap-2 bg-[#1E3A8A] text-white font-bold text-base px-10 py-4 rounded-2xl hover:bg-[#152D6E] transition-colors shadow-sm">
+              Apply Now <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </section>
+
+        <NewsletterSection />
+      </main>
+      <Footer />
+    </>
+  );
+}
