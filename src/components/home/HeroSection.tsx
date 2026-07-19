@@ -21,15 +21,16 @@ const floatingCards = [
 ];
 
 const bgSlides = [
-  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483589/pexels-rdne-7821702_1_njkwqw.jpg", alt: "Professional accounting class" },
-  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483597/pexels-rdne-7821685_1_lc9hm1.jpg", alt: "Corporate learning session" },
-  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483635/pexels-pavel-danilyuk-7654129_1_btubsm.jpg", alt: "Graduation and professional success" },
+  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784488319/pexels-rdne-7821702_1_1_xq4cuh.jpg", alt: "Professional accounting class" },
+  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "Corporate learning session" },
+  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784489637/pexels-rdne-7821685_1_1_pitkbm.jpg", alt: "Graduation and professional success" },
+  { id: 4, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784488680/pexels-pavel-danilyuk-7654129_1_1_l7olra.jpg", alt: "Professionals reviewing documents" },
 ];
 
 const cardSlides = [
-  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "Students studying at PIN Consultancy" },
-  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784403794/img1_vqix3z.jpg", alt: "Student reviewing notes before exam" },
-  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784403817/img2_belhsu.jpg", alt: "Graduate celebrating exam success" },
+  { id: 1, src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=85", alt: "Students studying at PIN Consultancy" },
+  { id: 2, src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=700&q=85", alt: "Student reviewing notes before exam" },
+  { id: 3, src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=700&q=85", alt: "Graduate celebrating exam success" },
 ];
 
 export default function HeroSection() {
