@@ -23,8 +23,8 @@ const floatingCards = [
 const bgSlides = [
   { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784488319/pexels-rdne-7821702_1_1_xq4cuh.jpg", alt: "Professional accounting class" },
   { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "Corporate learning session" },
-  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784489637/pexels-rdne-7821685_1_1_pitkbm.jpg", alt: "Graduation and professional success" },
-  { id: 4, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784488680/pexels-pavel-danilyuk-7654129_1_1_l7olra.jpg", alt: "Professionals reviewing documents" },
+  // { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784489637/pexels-rdne-7821685_1_1_pitkbm.jpg", alt: "Graduation and professional success" },
+  // { id: 4, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784488680/pexels-pavel-danilyuk-7654129_1_1_l7olra.jpg", alt: "Professionals reviewing documents" },
 ];
 
 const cardSlides = [
