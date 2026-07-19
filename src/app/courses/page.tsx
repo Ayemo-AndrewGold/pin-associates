@@ -6,6 +6,7 @@ import { Clock, Monitor, BookOpen, ArrowRight, CheckCircle2 } from "lucide-react
 import Badge from "@/components/ui/Badge";
 import SectionHeader from "@/components/ui/SectionHeader";
 import NewsletterSection from "@/components/home/NewsletterSection";
+import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
   title: "Programmes & Courses",
@@ -110,26 +111,18 @@ export default function CoursesPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section
-          className="relative pt-40 pb-16"
-          style={{ background: "linear-gradient(135deg, #0F2055 0%, #1a3070 50%, #152D6E 100%)" }}
-        >
-          <div className="container-pin relative z-10 text-center">
-            <span className="section-label section-label-gold mb-6 inline-flex">Our Programmes</span>
-            <h1 className="font-heading font-extrabold text-white text-4xl md:text-5xl leading-tight mb-4">
-              Professional Qualifications We Prepare You For
-            </h1>
-            <p className="text-white/65 text-lg max-w-2xl mx-auto leading-relaxed">
-              From accounting technician to chartered accountant, international to local
-              qualifications — we offer structured tuition for every stage of your professional journey.
-            </p>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
-            <svg viewBox="0 0 1440 40" fill="none" className="w-full">
-              <path d="M0 40 L0 20 Q720 0 1440 20 L1440 40 Z" fill="white" />
-            </svg>
-          </div>
-        </section>
+
+          <PageHero
+            label="Our Programmes"
+            title="Professional Qualifications We Prepare You For"
+            description="From accounting technician to chartered accountant, international to local
+        qualifications — we offer structured tuition for every stage of your professional journey."
+            slides={[
+              { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423630/IMG-20260716-WA0007_r0isob.jpg", alt: "University students studying together" },
+              { id: 2, src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85", alt: "Professional accounting class" },
+              { id: 3, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
+            ]}
+          />
 
         {/* Programmes list */}
         <section className="section-py bg-white">

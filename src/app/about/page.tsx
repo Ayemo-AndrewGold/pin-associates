@@ -6,6 +6,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import TeamCard from "@/components/ui/TeamCard";
 import StatsSection from "@/components/home/StatsSection";
+import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
   title: "About PIN Consultancy Services",
@@ -96,30 +97,16 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Page Hero */}
-        <section
-          className="relative pt-40 pb-20"
-          style={{ background: "linear-gradient(135deg, #0F2055 0%, #1a3070 50%, #152D6E 100%)" }}
-        >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-[0.06]" style={{ background: "radial-gradient(circle, #F4C430 0%, transparent 70%)" }} />
-          </div>
-          <div className="container-pin relative z-10 text-center">
-            <span className="section-label section-label-gold mb-6 inline-flex">About PIN</span>
-            <h1 className="font-heading font-extrabold text-white text-4xl md:text-5xl leading-tight mb-6">
-              Who We Are
-            </h1>
-            <p className="text-white/65 text-lg max-w-2xl mx-auto leading-relaxed">
-              Founded in 2009, PIN Consultancy Services has grown into one of Nigeria&apos;s most
-              trusted professional examination tuition providers with over 5,000 graduates and
-              a proven 87% first-attempt pass rate.
-            </p>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
-            <svg viewBox="0 0 1440 40" fill="none" className="w-full">
-              <path d="M0 40 L0 20 Q720 0 1440 20 L1440 40 Z" fill="white" />
-            </svg>
-          </div>
-        </section>
+        <PageHero
+          label="About PIN"
+          title="Who We Are"
+          description="Founded in 2009, PIN Consultancy Services has grown into one of Nigeria's most trusted professional examination tuition providers with over 5,000 graduates and a proven 87% first-attempt pass rate."
+          slides={[
+            { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423630/IMG-20260716-WA0007_r0isob.jpg", alt: "University students studying together" },
+            { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423645/IMG-20260718-WA0036_ae3icf.jpg", alt: "Professional accounting class" },
+            { id: 3, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
+          ]}
+        />
 
         {/* Mission & Vision */}
         <section className="section-py bg-white">

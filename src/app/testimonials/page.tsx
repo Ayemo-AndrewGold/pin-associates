@@ -6,6 +6,8 @@ import { Star, Quote, ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Badge from "@/components/ui/Badge";
 import NewsletterSection from "@/components/home/NewsletterSection";
+import StatsSection from "@/components/home/StatsSection";
+import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
   title: "Student Success Stories",
@@ -37,41 +39,22 @@ export default function TestimonialsPage() {
     <>
       <Navbar />
       <main>
+
         {/* Hero */}
-        <section
-          className="relative pt-40 pb-16"
-          style={{ background: "linear-gradient(135deg, #0F2055 0%, #1a3070 50%, #152D6E 100%)" }}
-        >
-          <div className="container-pin relative z-10 text-center">
-            <span className="section-label section-label-gold mb-6 inline-flex">Success Stories</span>
-            <h1 className="font-heading font-extrabold text-white text-4xl md:text-5xl leading-tight mb-4">
-              Thousands of Professionals.<br />One Proven Path.
-            </h1>
-            <p className="text-white/65 text-lg max-w-xl mx-auto">
-              PIN graduates are chartered accountants, tax managers, IT auditors, and finance
-              directors at Nigeria&apos;s leading organisations. These are their stories.
-            </p>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
-            <svg viewBox="0 0 1440 40" fill="none" className="w-full">
-              <path d="M0 40 L0 20 Q720 0 1440 20 L1440 40 Z" fill="white" />
-            </svg>
-          </div>
-        </section>
+        <PageHero
+  label="Success Stories"
+  title="Thousands of Professionals. One Proven Path."
+  description="PIN graduates are chartered accountants, tax managers, IT auditors, and finance
+              directors at Nigeria&apos;s leading organisations. These are their stories."
+  slides={[
+    { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423630/IMG-20260716-WA0007_r0isob.jpg", alt: "University students studying together" },
+    { id: 2, src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85", alt: "Professional accounting class" },
+    { id: 3, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
+  ]}
+/>
 
         {/* Stats */}
-        <section className="py-12 bg-white border-b border-[#F1F3F5]">
-          <div className="container-pin">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              {stats.map(({ v, l }) => (
-                <div key={l}>
-                  <p className="font-heading font-extrabold text-[#1E3A8A] text-3xl mb-1">{v}</p>
-                  <p className="text-[#6C757D] text-sm font-medium">{l}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StatsSection />
 
         {/* Testimonials grid */}
         <section className="section-py bg-[#F8F9FA]">

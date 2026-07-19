@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { CheckCircle2, ArrowRight, User, Mail, Phone, BookOpen, GraduationCap } from "lucide-react";
+import PageHero from "@/components/layout/PageHero";
 
 const programmes = [
   "ICAN — Foundation Level",
@@ -45,26 +46,18 @@ export default function ApplyPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section
-          className="relative pt-40 pb-16"
-          style={{ background: "linear-gradient(135deg, #0F2055 0%, #1a3070 50%, #152D6E 100%)" }}
-        >
-          <div className="container-pin relative z-10 text-center">
-            <span className="section-label section-label-gold mb-6 inline-flex">Enrolment</span>
-            <h1 className="font-heading font-extrabold text-white text-4xl md:text-5xl leading-tight mb-4">
-              Apply to PIN Consultancy
-            </h1>
-            <p className="text-white/65 text-lg max-w-xl mx-auto leading-relaxed">
-              Complete this form and our admissions team will be in touch within one business day
-              to guide you through the registration process.
-            </p>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
-            <svg viewBox="0 0 1440 40" fill="none" className="w-full">
-              <path d="M0 40 L0 20 Q720 0 1440 20 L1440 40 Z" fill="white" />
-            </svg>
-          </div>
-        </section>
+
+        <PageHero
+          label="Enrolment"
+          title="Apply to PIN Consultancy"
+          description="Complete this form and our admissions team will be in touch within one business day
+                      to guide you through the registration process."
+          slides={[
+            { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423630/IMG-20260716-WA0007_r0isob.jpg", alt: "University students studying together" },
+            { id: 2, src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85", alt: "Professional accounting class" },
+            { id: 3, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
+          ]}
+        />
 
         <section className="section-py bg-white">
           <div className="container-pin">

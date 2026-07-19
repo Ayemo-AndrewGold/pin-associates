@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import { Building2, Users, TrendingUp, FileText, Scale, Presentation, CheckCircle2, ArrowRight, Phone } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import NewsletterSection from "@/components/home/NewsletterSection";
+import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
   title: "Corporate Training & Advisory Services",
@@ -86,6 +87,8 @@ export default function CorporatePage() {
             </svg>
           </div>
         </section>
+
+        
 
         {/* Services */}
         <section className="section-py bg-white">

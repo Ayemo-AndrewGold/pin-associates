@@ -21,7 +21,7 @@ const floatingCards = [
 ];
 
 const bgSlides = [
-  { id: 1, src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85", alt: "Professional accounting class" },
+  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423630/IMG-20260716-WA0007_r0isob.jpg", alt: "Professional accounting class" },
   { id: 2, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
   { id: 3, src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=85", alt: "Graduation and professional success" },
   { id: 4, src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=85", alt: "Professionals reviewing documents" },
