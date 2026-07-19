@@ -21,9 +21,9 @@ const floatingCards = [
 ];
 
 const bgSlides = [
-  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483589/pexels-rdne-7821702_1_njkwqw.jpg", alt: "Professionals reviewing documents" },
-  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483635/pexels-pavel-danilyuk-7654129_1_btubsm.jpg", alt: "Corporate learning session" },
-  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483597/pexels-rdne-7821685_1_lc9hm1.jpg", alt: "Graduation and professional success" },
+  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483589/pexels-rdne-7821702_1_njkwqw.jpg", alt: "Professional accounting class" },
+  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483597/pexels-rdne-7821685_1_lc9hm1.jpg", alt: "Corporate learning session" },
+  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483635/pexels-pavel-danilyuk-7654129_1_btubsm.jpg", alt: "Graduation and professional success" },
 ];
 
 const cardSlides = [
@@ -111,7 +111,7 @@ export default function HeroSection() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(160deg,rgba(11,20,45,0.82) 50%,rgba(15,32,85,0.80) 80%,rgba(11,20,45,0.80) 100%)",
+              "linear-gradient(160deg,rgba(11,20,45,0.82) 0%,rgba(15,32,85,0.72) 50%,rgba(11,20,45,0.80) 100%)",
           }}
         />
 
