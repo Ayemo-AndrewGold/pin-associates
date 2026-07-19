@@ -27,7 +27,7 @@ const bgSlides = [
 ];
 
 const cardSlides = [
-  { id: 1, src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=85", alt: "Students studying at PIN Consultancy" },
+  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "Students studying at PIN Consultancy" },
   { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784403794/img1_vqix3z.jpg", alt: "Student reviewing notes before exam" },
   { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784403817/img2_belhsu.jpg", alt: "Graduate celebrating exam success" },
 ];
