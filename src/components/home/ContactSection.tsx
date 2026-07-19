@@ -85,7 +85,7 @@ export default function ContactSection() {
             {contactInfo.map(({ icon: Icon, label, value, href }) => (
               <div
                 key={label}
-                className="flex items-start gap-4 p-5 bg-[#F8F9FA] rounded-2xl border border-[#E9ECEF] group hover:border-[#DBEAFE] transition-colors"
+                className="flex items-start gap-4 p-3 sm:p-6 bg-[#F8F9FA] rounded-2xl border border-[#E9ECEF] group hover:border-[#DBEAFE] transition-colors"
               >
                 <div className="w-10 h-10 bg-[#EFF4FF] rounded-xl flex items-center justify-center flex-shrink-0">
                   <Icon className="w-5 h-5 text-[#1E3A8A]" strokeWidth={1.75} />
@@ -132,7 +132,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-[#F8F9FA] rounded-3xl border border-[#E9ECEF] p-8">
+            <div className="bg-[#F8F9FA] rounded-3xl border border-[#E9ECEF] p-3 sm:p-8">
               {!sent ? (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">

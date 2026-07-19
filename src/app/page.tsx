@@ -18,7 +18,7 @@ import ContactSection from "@/components/home/ContactSection";
 export const metadata: Metadata = {
   title: "Pass Your Professional Exams With Confidence | PIN Consultancy Services",
   description:
-    "PIN Consultancy Services (Pass It Now Associates) — Nigeria's trusted professional examination tuition provider for ICAN, ACCA, CITN, CISA, ATS, and Diploma in IFRS. Expert tutors. Proven results.",
+    "PIN Consultancy Services (Pass It Now Associates) Nigeria's trusted professional examination tuition provider for ICAN, ACCA, CITN, CISA, ATS, and Diploma in IFRS. Expert tutors. Proven results.",
 };
 
 export default function HomePage() {

@@ -107,7 +107,7 @@ export default function WhyChooseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="group relative bg-white rounded-2xl border border-[#E9ECEF] p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="group relative bg-white rounded-2xl border border-[#E9ECEF] p-3 sm:p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               {/* Icon */}
               <div

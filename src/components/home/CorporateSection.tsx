@@ -123,7 +123,7 @@ export default function CorporateSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="bg-white rounded-2xl border border-[#E9ECEF] p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
+                className="bg-white rounded-2xl border border-[#E9ECEF] p-4 sm:p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
               >
                 <div className="w-10 h-10 bg-[#EFF4FF] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] transition-colors duration-300">
                   <Icon className="w-5 h-5 text-[#1E3A8A] group-hover:text-white transition-colors duration-300" strokeWidth={1.75} />

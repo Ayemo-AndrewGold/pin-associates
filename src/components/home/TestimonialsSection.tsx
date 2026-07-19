@@ -189,7 +189,7 @@ export default function TestimonialsSection() {
             >
               <div className="grid md:grid-cols-[1fr_2fr] divide-y md:divide-y-0 md:divide-x divide-[#F1F3F5]">
                 {/* Left — profile */}
-                <div className="p-8 md:p-10 flex flex-col justify-between bg-[#F8F9FA]">
+                <div className="p-3 sm:p-6 md:p-10 flex flex-col justify-between bg-[#F8F9FA]">
                   <div>
                     {/* Avatar / Photo */}
                     <div className="mb-5">

@@ -269,7 +269,7 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden">
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
@@ -277,10 +277,16 @@ export default function Navbar() {
           <div className="absolute top-0 right-0 w-[85vw] max-w-sm h-full bg-white shadow-2xl overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b border-[#F1F3F5]">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 bg-[#1E3A8A] rounded-lg flex items-center justify-center">
-                  <GraduationCap className="w-4 h-4 text-[#F4C430]" strokeWidth={2.5} />
+                <div className=" bg-[#EFF4FF] rounded-xl flex items-center justify-center shadow-sm group-hover:bg-[#152D6E] transition-colors">
+                <Image
+                  src="/images/pin-logo.png"
+                  alt="PIN Consultancy Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
                 </div>
-                <span className="font-heading font-bold text-[#1E3A8A]">PIN Consultancy</span>
+                <span className="font-heading font-bold text-[#1E3A8A]">PIN ASSOCIATES</span>
               </div>
               <button
                 onClick={() => setMobileOpen(false)}
@@ -331,43 +337,40 @@ export default function Navbar() {
                         : "text-[#222222] hover:bg-[#F8F9FA]"
                     )}
                   >
-                    {link.href === "/" && <BarChart3 className="w-4 h-4 text-[#1E3A8A]" />}
+                    {link.href === "/" }
+                    {link.href === "/about"}
+                    {link.href === "/corporate"}
+                    {link.href === "/testimonials"}
+                    {link.href === "/blog"}
+                    {link.href === "/contact"}
+                    {link.label}
+
+                    {/* {link.href === "/" && <BarChart3 className="w-4 h-4 text-[#1E3A8A]" />}
                     {link.href === "/about" && <Users className="w-4 h-4 text-[#1E3A8A]" />}
                     {link.href === "/corporate" && <Briefcase className="w-4 h-4 text-[#1E3A8A]" />}
                     {link.href === "/testimonials" && <GraduationCap className="w-4 h-4 text-[#1E3A8A]" />}
                     {link.href === "/blog" && <FileText className="w-4 h-4 text-[#1E3A8A]" />}
                     {link.href === "/contact" && <Phone className="w-4 h-4 text-[#1E3A8A]" />}
-                    {link.label}
+                    {link.label} */}
                   </Link>
                 )
               )}
             </nav>
 
             <div className="p-4 space-y-3 border-t border-[#F1F3F5]">
-              <Link
+              {/* <Link
                 href="/portal/login"
                 className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl border-2 border-[#1E3A8A] text-[#1E3A8A] text-sm font-semibold hover:bg-[#EFF4FF] transition-colors"
               >
                 <LogIn className="w-4 h-4" />
                 Student Portal
-              </Link>
+              </Link> */}
               <Link
                 href="/apply"
                 className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl bg-[#F4C430] text-[#152D6E] text-sm font-bold hover:bg-[#D4A820] transition-colors shadow-sm"
               >
                 Apply Now →
               </Link>
-            </div>
-
-            <div className="p-4 bg-[#F8F9FA] space-y-2">
-              <p className="text-xs font-semibold text-[#ADB5BD] uppercase tracking-wider">Contact</p>
-              <a href="tel:+2348000000000" className="flex items-center gap-2 text-sm text-[#495057]">
-                <Phone className="w-3.5 h-3.5 text-[#1E3A8A]" />
-                +234 800 000 0000
-              </a>
-              <a href="mailto:info@pinassociates.com.ng" className="text-sm text-[#495057] hover:text-[#1E3A8A] block truncate">
-                info@pinassociates.com.ng
-              </a>
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ const steps = [
     icon: BookOpen,
     step: "03",
     title: "Attend Expert Classes",
-    body: "Join structured lectures with experienced tutors. Choose your preferred mode — weekday, weekend, or live online classes.",
+    body: "Join structured lectures with experienced tutors. Choose your preferred mode weekday, weekend, or live online classes.",
     color: "#16A34A",
     bg: "#DCFCE7",
   },
@@ -103,7 +103,7 @@ export default function LearningJourneySection() {
               transition={{ duration: 0.55, delay: i * 0.08 }}
               className="relative group"
             >
-              <div className="bg-white/[0.06] border border-white/[0.12] rounded-2xl p-7 hover:bg-white/[0.09] transition-colors duration-300 h-full">
+              <div className="bg-white/[0.06] border border-white/[0.12] rounded-2xl p-4 sm:p-6 hover:bg-white/[0.09] transition-colors duration-300 h-full">
                 {/* Step number — background */}
                 <span className="absolute top-5 right-6 font-heading font-extrabold text-5xl text-white/[0.05] leading-none select-none">
                   {step}

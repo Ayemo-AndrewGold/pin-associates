@@ -163,7 +163,7 @@ export default function ProgramsSection() {
                 className="group flex flex-col h-full bg-white rounded-2xl border border-[#E9ECEF] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 {/* Card header */}
-                <div className="p-6 border-b border-[#F1F3F5]">
+                <div className="p-4 sm:p-6 border-b border-[#F1F3F5]">
                   <div className="flex items-start justify-between mb-4">
                     <span className="text-3xl">{prog.icon}</span>
                     <Badge variant={prog.badgeVariant} size="sm">{prog.badge}</Badge>

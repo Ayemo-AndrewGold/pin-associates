@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Do you offer online classes or only in-person tuition?",
-    a: "We offer both. Students can choose from weekday in-person classes, weekend intensive sessions, or live online classes conducted via our digital platform. All students — regardless of mode — have access to recorded sessions, study materials, and the CBT practice portal.",
+    a: "We offer both. Students can choose from weekday in-person classes, weekend intensive sessions, or live online classes conducted via our digital platform. All students regardless of mode have access to recorded sessions, study materials, and the CBT practice portal.",
   },
   {
     q: "What study materials are provided?",
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "What makes PIN's pass rates so high?",
-    a: "Our results are driven by exam-intelligent teaching, small class sizes, continuous assessment, and a culture of accountability. Tutors are active professionals who teach to the exam — not just the curriculum. Mock examinations, question analysis sessions, and personalised feedback are core parts of every programme.",
+    a: "Our results are driven by exam-intelligent teaching, small class sizes, continuous assessment, and a culture of accountability. Tutors are active professionals who teach to the exam not just the curriculum. Mock examinations, question analysis sessions, and personalised feedback are core parts of every programme.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function FAQSection() {
               align="left"
             />
 
-            <div className="mt-8 p-6 bg-[#EFF4FF] rounded-2xl border border-[#DBEAFE]">
+            <div className="mt-8 p-4 sm:p-6 bg-[#EFF4FF] rounded-2xl border border-[#DBEAFE]">
               <p className="font-heading font-bold text-[#1E3A8A] text-base mb-2">
                 Still have questions?
               </p>
@@ -103,7 +103,7 @@ export default function FAQSection() {
                 >
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                    className="w-full flex items-center justify-between gap-4 px-4 sm:px-6 py-5 text-left"
                     aria-expanded={isOpen}
                   >
                     <span
@@ -136,7 +136,7 @@ export default function FAQSection() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                       >
-                        <p className="px-6 pb-5 text-[#495057] text-sm leading-relaxed">
+                        <p className=" px-4 sm:px-6 pb-5 text-[#495057] text-sm leading-relaxed">
                           {faq.a}
                         </p>
                       </motion.div>

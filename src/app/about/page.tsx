@@ -5,6 +5,7 @@ import { CheckCircle2, Award, Target, Eye, Heart, Users, BookOpen, TrendingUp } 
 import SectionHeader from "@/components/ui/SectionHeader";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import TeamCard from "@/components/ui/TeamCard";
+import StatsSection from "@/components/home/StatsSection";
 
 export const metadata: Metadata = {
   title: "About PIN Consultancy Services",
@@ -140,7 +141,7 @@ export default function AboutPage() {
                   text: "To become Africa's leading professional examination preparation institution recognised for academic rigour, student outcomes, and the quality of the professionals we produce.",
                 },
               ].map(({ icon: Icon, label, color, bg, text }) => (
-                <div key={label} className="bg-[#F8F9FA] rounded-3xl p-8 border border-[#E9ECEF]">
+                <div key={label} className="bg-[#F8F9FA] rounded-3xl p-4 sm:p-8 border border-[#E9ECEF]">
                   <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style={{ backgroundColor: bg }}>
                     <Icon className="w-6 h-6" style={{ color }} strokeWidth={1.75} />
                   </div>
@@ -217,7 +218,7 @@ export default function AboutPage() {
             />
             <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {values.map(({ icon: Icon, title, body }) => (
-                <div key={title} className="bg-[#F8F9FA] rounded-2xl border border-[#E9ECEF] p-6 hover:shadow-sm transition-shadow">
+                <div key={title} className="bg-[#F8F9FA] rounded-2xl border border-[#E9ECEF] p-4 sm:p-6 hover:shadow-sm transition-shadow">
                   <div className="w-10 h-10 bg-[#EFF4FF] rounded-xl flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5 text-[#1E3A8A]" strokeWidth={1.75} />
                   </div>
@@ -247,27 +248,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Why trust us stats */}
-        <section
-          className="py-16"
-          style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #152D6E 100%)" }}
-        >
-          <div className="container-pin">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              {[
-                { v: "5,000+", l: "Graduates" },
-                { v: "87%",    l: "First-Attempt Pass Rate" },
-                { v: "16+",    l: "Years of Excellence" },
-                { v: "9",      l: "Programmes" },
-              ].map(({ v, l }) => (
-                <div key={l}>
-                  <p className="font-heading font-extrabold text-[#F4C430] text-3xl mb-1">{v}</p>
-                  <p className="text-white/60 text-sm font-medium">{l}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StatsSection />
+       
 
         {/* Teaching philosophy */}
         <section className="section-py bg-white">

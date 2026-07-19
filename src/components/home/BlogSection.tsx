@@ -78,7 +78,7 @@ export default function BlogSection() {
           />
           <Link
             href="/blog"
-            className="flex-shrink-0 inline-flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm border border-[#1E3A8A]/20 px-5 py-2.5 rounded-xl hover:bg-[#EFF4FF] hover:border-[#1E3A8A]/40 transition-all"
+            className="flex-shrink-0 inline-flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm border border-[#1E3A8A]/20 px-4 sm:px-6 py-2.5 rounded-xl hover:bg-[#EFF4FF] hover:border-[#1E3A8A]/40 transition-all"
           >
             All Articles
             <ArrowRight className="w-4 h-4" />
@@ -111,7 +111,7 @@ export default function BlogSection() {
                     </span>
                   </div>
                 </div>
-                <div className="p-7 flex flex-col flex-1">
+                <div className=" p-4 sm:p-6 flex flex-col flex-1">
                   <h3 className="font-heading font-bold text-[#222222] text-xl leading-snug mb-3 group-hover:text-[#1E3A8A] transition-colors">
                     {featured.title}
                   </h3>

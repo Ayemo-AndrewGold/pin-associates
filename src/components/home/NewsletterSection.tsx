@@ -27,7 +27,7 @@ export default function NewsletterSection() {
         >
           {/* Card */}
           <div
-            className="bg-white rounded-[20px] border border-[#1E3A8A]/12 text-center px-8 py-12 md:px-14"
+            className="bg-white rounded-[20px] border border-[#1E3A8A]/12 text-center px-3 sm:px-8 py-12 md:px-14"
             style={{ boxShadow: "0 4px 32px rgba(30,58,138,0.07), 0 1px 4px rgba(30,58,138,0.04)" }}
           >
             {/* Gold accent line above heading */}

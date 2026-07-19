@@ -74,7 +74,7 @@ export default function AboutSection() {
               style={{
                 /* 5:6 ratio on mobile, slightly taller on lg */
                 paddingTop: "clamp(380px, 62%, 620px)",
-                boxShadow: "0 28px 64px rgba(30,58,138,0.14), 0 8px 24px rgba(0,0,0,0.08)",
+                boxShadow: "0 23px 64px rgba(30,58,138,0.14), 0 8px 24px rgba(0,0,0,0.08)",
               }}
             >
               {/* Image — position:absolute fills the padding-top box 100% */}
