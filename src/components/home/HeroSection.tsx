@@ -21,9 +21,9 @@ const floatingCards = [
 ];
 
 const bgSlides = [
-  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784481926/pexels-rdne-7821702_lkcs9z.jpg", alt: "Professionals reviewing documents" },
-  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784481923/pexels-rdne-7821685_ylr5no.jpg", alt: "Corporate learning session" },
-  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784481923/pexels-pavel-danilyuk-7654129_nzpkpg.jpg", alt: "Graduation and professional success" },
+  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483589/pexels-rdne-7821702_1_njkwqw.jpg", alt: "Professionals reviewing documents" },
+  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483635/pexels-pavel-danilyuk-7654129_1_btubsm.jpg", alt: "Corporate learning session" },
+  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784483597/pexels-rdne-7821685_1_lc9hm1.jpg", alt: "Graduation and professional success" },
 ];
 
 const cardSlides = [
