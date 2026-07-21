@@ -58,9 +58,9 @@ export default function Footer() {
             Total cycle = 4 × 6 = 24 s */}
         {[
           "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg",
-          "https://res.cloudinary.com/yaovkmpi/image/upload/v1784557870/Purple_Abstract_Graphic_Design_LinkedIn_Article_Cover_Image_1_lle3mb.png",
-          "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613463/8_xzeshb.png",
+          "https://res.cloudinary.com/yaovkmpi/image/upload/v1784481889/wmremove-transformed_3_ujyrty.jpg",
           "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613464/Blue_Futuristic_Technology_LinkedIn_Background_Photo_3_l4mhqd.png",
+          "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613463/8_xzeshb.png",
         ].map((src, i) => (
           <img
             key={src}

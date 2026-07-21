@@ -98,7 +98,6 @@ export default function AboutPage() {
       <main>
         {/* Page Hero */}
         <PageHero
-          label="About PIN"
           title="Who We Are"
           description="Founded in 2009, PIN Consultancy Services has grown into one of Nigeria's most trusted professional examination tuition providers with over 5,000 graduates and a proven 87% first-attempt pass rate."
           slides={[
