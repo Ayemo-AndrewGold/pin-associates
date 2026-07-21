@@ -38,7 +38,7 @@ const programs = [
     title: "ICAN",
     fullName: "Institute of Chartered Accountants of Nigeria",
     overview:
-      "Comprehensive tuition across all levels of the ICAN professional qualification — from Foundation to Professional.",
+      "Comprehensive tuition across all levels of the ICAN professional qualification from Foundation to Professional.",
     duration: "12–36 months",
     mode: "In-person & Online",
     levels: ["Foundation", "Skills", "Professional"],

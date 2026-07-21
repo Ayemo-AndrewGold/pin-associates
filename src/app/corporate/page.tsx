@@ -55,7 +55,7 @@ const services = [
   },
   {
     icon: FileText, title: "Regulatory Compliance",
-    body: "Ensuring your organisation meets all applicable regulatory requirements — FIRS, SEC, CBN, NAICOM, CAC, and other sector-specific regulatory bodies. We identify gaps and implement compliance frameworks.",
+    body: "Ensuring your organisation meets all applicable regulatory requirements FIRS, SEC, CBN, NAICOM, CAC, and other sector-specific regulatory bodies. We identify gaps and implement compliance frameworks.",
     features: ["Regulatory gap analysis", "Compliance framework design", "Regulatory filing support", "Compliance training for staff"],
   },
   {
