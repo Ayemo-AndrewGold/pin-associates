@@ -11,12 +11,12 @@ const posts = [
     slug: "ican-nov-dec-2026-examination-tips",
     category: "Exam Strategy",
     categoryVariant: "blue" as const,
-    title: "ICAN Nov/Dec 2026: Six Strategies That Separate Pass Students From the Rest",
+    title: "ICAN NOV 2026:  Strategies That Separate Pass Students From the Rest",
     excerpt:
       "After coaching thousands of ICAN candidates, our tutors have identified the consistent habits and approaches that produce first-time passes. Here is what the data shows.",
     readTime: "8 min read",
-    date: "July 10, 2026",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80",
+    date: "July 3, 2026",
+    image: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423645/IMG-20260718-WA0036_ae3icf.jpg",
     featured: true,
   },
   {
@@ -28,7 +28,7 @@ const posts = [
       "The Strategic Professional level is where many ACCA candidates stall. This guide breaks down SBL, SBR, and the optional papers with a clear study framework.",
     readTime: "11 min read",
     date: "June 28, 2026",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
+    image: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784621055/Guide-to-ACCA-applied-skills_vwlr2j.png",
     featured: false,
   },
   {
@@ -52,7 +52,7 @@ const posts = [
       "Passing your ICAN exams opens a wide range of professional pathways. We explore the most rewarding career options for newly qualified accountants in Nigeria.",
     readTime: "7 min read",
     date: "June 3, 2026",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    image: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784621564/qualified-accountant_gpu0ev.jpg",
     featured: false,
   },
 ];

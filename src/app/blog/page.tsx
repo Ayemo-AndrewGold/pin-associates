@@ -18,15 +18,17 @@ const categories = ["All", "Exam Strategy", "ICAN", "ACCA", "CITN", "Accounting"
 
 const posts = [
   { slug: "ican-nov-dec-2026-examination-tips", category: "Exam Strategy", categoryVariant: "blue" as const, featured: true,
-    title: "ICAN Nov/Dec 2026: Six Strategies That Separate Pass Students From the Rest",
+    title: "ICAN NOV 2026:  Strategies That Separate Pass Students From the Rest",
     excerpt: "After coaching thousands of ICAN candidates, our tutors have identified the consistent habits and approaches that produce first-time passes.",
-    readTime: "8 min", date: "Jul 10, 2026",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&q=80" },
+    readTime: "8 min", date: "July 3, 2026",
+    image: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423645/IMG-20260718-WA0036_ae3icf.jpg"
+  },
   { slug: "acca-strategic-professional-guide-2026", category: "ACCA", categoryVariant: "gold" as const, featured: false,
     title: "A Practical Guide to the ACCA Strategic Professional Level in 2026",
     excerpt: "The Strategic Professional level is where many ACCA candidates stall. This guide breaks down SBL, SBR, and the optional papers.",
     readTime: "11 min", date: "Jun 28, 2026",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80" },
+    image: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784621055/Guide-to-ACCA-applied-skills_vwlr2j.png"
+  },
   { slug: "ifrs-vs-nigerian-gaap", category: "Accounting", categoryVariant: "green" as const, featured: false,
     title: "IFRS vs Nigerian GAAP: The Key Differences Every Accountant Must Know",
     excerpt: "As Nigerian companies increasingly adopt IFRS, understanding the practical differences between standards has become essential.",
@@ -36,7 +38,8 @@ const posts = [
     title: "What Comes After ICAN? Six Career Paths for Newly Qualified Chartered Accountants",
     excerpt: "Passing your ICAN exams opens a wide range of professional pathways. We explore the most rewarding career options.",
     readTime: "7 min", date: "Jun 3, 2026",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" },
+    image: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784621564/qualified-accountant_gpu0ev.jpg"
+  },
   { slug: "citn-examination-strategy-2026", category: "CITN", categoryVariant: "green" as const, featured: false,
     title: "How to Pass the CITN Professional Examination: A Tutor's Insider Guide",
     excerpt: "CITN examinations test your application of Nigerian tax law, not just your knowledge of it. Here is how to approach each paper strategically.",
@@ -46,7 +49,8 @@ const posts = [
     title: "Nigerian Tax Law Changes in 2026: What Finance Professionals Need to Know",
     excerpt: "The Finance Act 2026 introduces several material changes to corporate income tax, VAT, and capital gains tax. Here is what changed.",
     readTime: "12 min", date: "May 10, 2026",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=700&q=80" },
+    image: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784621564/qualified-accountant_gpu0ev.jpg"
+  }
 ];
 
 export default function BlogPage() {
