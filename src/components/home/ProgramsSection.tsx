@@ -6,31 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clock, Monitor, BookOpen } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Badge from "@/components/ui/Badge";
-
-/* ── Renders a real logo image if icon is a URL,
-       falls back to the emoji/text if not ────────── */
-function ProgramIcon({ icon, title }: { icon: string; title: string }) {
-  const [failed, setFailed] = useState(false);
-  const isUrl = icon.startsWith("http") || icon.startsWith("/");
-
-  if (isUrl && !failed) {
-    return (
-      <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#E9ECEF] bg-white flex items-center justify-center shadow-sm flex-shrink-0">
-        <img
-          src={icon}
-          alt={`${title} logo`}
-          onError={() => setFailed(true)}
-          className="w-full h-full object-contain p-1"
-        />
-      </div>
-    );
-  }
-
-  /* Emoji or text fallback */
-  return (
-    <span className="text-3xl flex-shrink-0">{icon}</span>
-  );
-}
+import ProgramIcon from "@/components/ui/ProgramIcon";
 
 const programs = [
   {
@@ -191,7 +167,9 @@ export default function ProgramsSection() {
                 {/* Card header */}
                 <div className="p-4 sm:p-6 border-b border-[#F1F3F5]">
                   <div className="flex items-start justify-between mb-4">
-                    <ProgramIcon icon={prog.icon} title={prog.title} />
+                    <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#E9ECEF] bg-white flex items-center justify-center shadow-sm flex-shrink-0 p-1">
+                      <ProgramIcon icon={prog.icon} title={prog.title} size={40} />
+                    </div>
                     <Badge variant={prog.badgeVariant} size="sm">{prog.badge}</Badge>
                   </div>
                   <h3 className="font-heading font-bold text-[#1E3A8A] text-xl mb-1 group-hover:text-[#152D6E] transition-colors">

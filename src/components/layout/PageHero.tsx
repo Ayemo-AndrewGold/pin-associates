@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 type Slide = { id: number; src: string; alt: string };
 
 interface PageHeroProps {
-  label: string;
+  label?: string;
   title: string;
   description: string;
   slides: Slide[];
@@ -85,7 +85,7 @@ export default function PageHero({ label, title, description, slides, children }
 
       {/* Content */}
       <div className="container-pin relative z-10 text-center pt-16 pb-16">
-        <span className="section-label section-label-gold mb-6 inline-flex">{label}</span>
+        {label && <span className="section-label section-label-gold mb-6 inline-flex">{label}</span>}
         <h1 className="font-heading font-extrabold text-white text-4xl md:text-5xl leading-tight mb-6">
           {title}
         </h1>

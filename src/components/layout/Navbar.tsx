@@ -17,7 +17,7 @@ const programs = [
   { label: "ATS",                href: "/courses/ats",           desc: "Accounting Technicians Scheme" },
   { label: "CISA",               href: "/courses/cisa",          desc: "Certified Information Systems Auditor" },
   { label: "Diploma in IFRS",    href: "/courses/ifrs-diploma",  desc: "International Financial Reporting Standards" },
-  { label: "Corporate Training", href: "/courses/corporate",     desc: "Tailored workforce development programmes" },
+  // { label: "Corporate Training", href: "/courses/corporate",     desc: "Tailored workforce development programmes" },
   { label: "Business Consulting",href: "/courses/consulting",    desc: "Strategic business advisory services" },
 ];
 

@@ -4,9 +4,9 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { courses } from "@/lib/courseData";
-import { CheckCircle2, Clock, Monitor, ArrowRight, BookOpen, Award, Users, Plus, Minus } from "lucide-react";
-import Badge from "@/components/ui/Badge";
+import { CheckCircle2, Clock, Monitor, ArrowRight, BookOpen, Award, Users } from "lucide-react";
 import NewsletterSection from "@/components/home/NewsletterSection";
+import PageHero from "@/components/layout/PageHero";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -31,102 +31,69 @@ export default async function CoursePage({ params }: Props) {
   const course = courses[slug];
   if (!course) notFound();
 
-  const badgeVariantMap: Record<string, "blue" | "gold" | "green" | "gray"> = {
-    "Most Popular": "gold",
-    "International": "blue",
-    "Tax Specialist": "green",
-    "Entry Level": "gray",
-    "IT Audit": "blue",
-    "ACCA Accredited": "gold",
-    "Advisory": "blue",
-    "For Organisations": "gray",
-  };
-  const badgeVariant = badgeVariantMap[course.badge] ?? "blue";
-
   return (
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section
-          className="relative pt-40 pb-20"
-          style={{ background: "linear-gradient(135deg, #0F2055 0%, #1a3070 50%, #152D6E 100%)" }}
+        {/* Hero — image slider */}
+        <PageHero
+          title={course.title}
+          description={course.tagline}
+          slides={[
+            { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: `${course.title} professional class` },
+            { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784481889/wmremove-transformed_3_ujyrty.jpg", alt: "Students studying" },
+            { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613463/8_xzeshb.png", alt: "Professional examination preparation" },
+          ]}
         >
-          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full opacity-[0.06]" style={{ background: "radial-gradient(circle, #F4C430 0%, transparent 70%)" }} />
-          </div>
-          <div className="container-pin relative z-10">
-            {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-xs text-white/40 mb-8" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
-              <span>/</span>
-              <Link href="/courses" className="hover:text-white/70 transition-colors">Programmes</Link>
-              <span>/</span>
-              <span className="text-white/70">{course.title}</span>
-            </nav>
+          {/* Logo + badge + CTA row injected below the description */}
+          <div className="flex flex-col items-center gap-6">
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-5xl">{course.icon}</span>
-                  <Badge variant={badgeVariant}>{course.badge}</Badge>
-                </div>
-                <h1 className="font-heading font-extrabold text-white text-4xl md:text-5xl leading-tight mb-2">
-                  {course.title}
-                </h1>
-                <p className="text-[#F4C430] font-semibold text-base mb-4">{course.fullName}</p>
-                <p className="text-white/65 text-lg leading-relaxed mb-8 max-w-xl">
-                  {course.tagline}
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link href="/apply" className="inline-flex items-center gap-2 bg-[#F4C430] text-[#152D6E] font-bold text-base px-8 py-4 rounded-2xl hover:bg-[#D4A820] transition-all shadow-lg hover:-translate-y-0.5">
-                    Apply Now <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <Link href="/contact" className="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-2xl hover:bg-white/15 transition-all">
-                    Speak to an Advisor
-                  </Link>
-                </div>
+            {/* Programme logo */}
+            {course.icon.startsWith("http") && (
+              <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center p-2 border border-white/30">
+                <img
+                  src={course.icon}
+                  alt={`${course.title} logo`}
+                  className="w-full h-full object-contain"
+                />
               </div>
+            )}
 
-              {/* Quick facts card */}
-              <div className="bg-white/[0.07] border border-white/[0.15] rounded-3xl p-7 backdrop-blur-sm">
-                <h3 className="font-heading font-bold text-white text-base mb-5">Programme Overview</h3>
-                <div className="space-y-4">
-                  {[
-                    { icon: Clock, label: "Duration", value: course.levels.map(l => l.duration).join(" + ") },
-                    { icon: Monitor, label: "Study Mode", value: course.mode },
-                    { icon: BookOpen, label: "Levels", value: `${course.levels.length} Level${course.levels.length > 1 ? "s" : ""}` },
-                    { icon: Award, label: "Qualification", value: course.outcomes[0] },
-                  ].map(({ icon: Icon, label, value }) => (
-                    <div key={label} className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 text-[#F4C430]" strokeWidth={1.75} />
-                      </div>
-                      <div>
-                        <p className="text-white/50 text-xs font-medium">{label}</p>
-                        <p className="text-white text-sm font-semibold leading-tight">{value}</p>
-                      </div>
-                    </div>
-                  ))}
+            {/* CTA buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/apply"
+                className="inline-flex items-center gap-2 bg-[#F4C430] text-[#152D6E] font-bold text-base px-8 py-4 rounded-2xl hover:bg-[#D4A820] transition-all shadow-lg hover:-translate-y-0.5"
+              >
+                Apply Now <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-2xl hover:bg-white/20 transition-all"
+              >
+                Speak to an Advisor
+              </Link>
+            </div>
+
+            {/* Quick facts strip */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
+              {[
+                { icon: Clock,    value: course.levels.map(l => l.duration).join(" + ") },
+                { icon: Monitor,  value: course.mode.split(",")[0] },
+                { icon: BookOpen, value: `${course.levels.length} Level${course.levels.length > 1 ? "s" : ""}` },
+              ].map(({ icon: Icon, value }) => (
+                <div
+                  key={value}
+                  className="flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm
+                             rounded-full px-4 py-2 text-white text-xs font-medium"
+                >
+                  <Icon className="w-3.5 h-3.5 text-[#F4C430]" />
+                  {value}
                 </div>
-                <div className="mt-6 pt-5 border-t border-white/10">
-                  <p className="text-[#F4C430] text-xs font-bold uppercase tracking-wider mb-3">Tuition Fees</p>
-                  {course.fees.map((fee) => (
-                    <div key={fee.level} className="flex items-center justify-between py-1.5">
-                      <span className="text-white/60 text-xs">{fee.level}</span>
-                      <span className="text-white font-semibold text-sm">{fee.amount}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
-            <svg viewBox="0 0 1440 40" fill="none" className="w-full">
-              <path d="M0 40 L0 20 Q720 0 1440 20 L1440 40 Z" fill="white" />
-            </svg>
-          </div>
-        </section>
+        </PageHero>
 
         {/* Overview */}
         <section className="section-py bg-white">
@@ -253,7 +220,7 @@ export default async function CoursePage({ params }: Props) {
           </div>
         </section>
 
-        <NewsletterSection />
+        {/* <NewsletterSection /> */}
       </main>
       <Footer />
     </>

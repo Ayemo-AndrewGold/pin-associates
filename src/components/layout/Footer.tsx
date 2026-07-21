@@ -15,7 +15,7 @@ const programs = [
   { label: "ATS",                href: "/courses/ats" },
   { label: "CISA",               href: "/courses/cisa" },
   { label: "Diploma in IFRS",    href: "/courses/ifrs-diploma" },
-  { label: "Corporate Training", href: "/courses/corporate" },
+  { label: "Corporate Training", href: "/corporate" },
 ];
 
 const quickLinks = [
@@ -50,30 +50,59 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#0B1F3A] text-white overflow-hidden">
 
-      {/* ── Background image with dark overlay ── */}
+      {/* ── Background image slider with dark overlay ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <img
-          src="https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg"
-          alt=""
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center 40%",
-            opacity: 0.22,
-          }}
-        />
-        {/* Overlay — dark enough to keep text readable, light enough to show image */}
+
+        {/* Four images cross-fade using CSS animation staggered delays.
+            Each image stays for ~6 s, fades over 1.5 s.
+            Total cycle = 4 × 6 = 24 s */}
+        {[
+          "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg",
+          "https://res.cloudinary.com/yaovkmpi/image/upload/v1784557870/Purple_Abstract_Graphic_Design_LinkedIn_Article_Cover_Image_1_lle3mb.png",
+          "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613463/8_xzeshb.png",
+          "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613464/Blue_Futuristic_Technology_LinkedIn_Background_Photo_3_l4mhqd.png",
+        ].map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center 40%",
+              opacity: 0,
+              animationName: "footerSlide",
+              animationDuration: "24s",
+              animationTimingFunction: "ease-in-out",
+              animationIterationCount: "infinite",
+              animationDelay: `${i * 6}s`,
+            }}
+          />
+        ))}
+
+        {/* Dark overlay — keeps all text readable */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(11,31,58,0.78) 0%, rgba(11,31,58,0.65) 50%, rgba(11,31,58,0.82) 100%)",
+              "linear-gradient(180deg, rgba(11,31,58,0.82) 0%, rgba(11,31,58,0.72) 50%, rgba(11,31,58,0.88) 100%)",
           }}
         />
       </div>
+
+      {/* Keyframe injected inline — no Tailwind needed */}
+      <style>{`
+        @keyframes footerSlide {
+          0%        { opacity: 0; }
+          4%        { opacity: 0.22; }
+          25%       { opacity: 0.22; }
+          29%       { opacity: 0; }
+          100%      { opacity: 0; }
+        }
+      `}</style>
 
       {/* ── Gold top divider ── */}
       <div className="relative bg-gradient-to-r from-transparent via-[#F4C430] to-transparent" />

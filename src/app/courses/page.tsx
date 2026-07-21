@@ -7,6 +7,7 @@ import Badge from "@/components/ui/Badge";
 import SectionHeader from "@/components/ui/SectionHeader";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import PageHero from "@/components/layout/PageHero";
+import ProgramIcon from "@/components/ui/ProgramIcon";
 
 export const metadata: Metadata = {
   title: "Programmes & Courses",
@@ -23,7 +24,8 @@ const programmes = [
     duration: "12–36 months", mode: "In-person & Online",
     levels: ["Foundation", "Skills", "Professional"],
     badge: "Most Popular", badgeVariant: "gold" as const,
-    href: "/courses/ican", icon: "🏛️",
+    href: "/courses/ican",
+    icon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552599/ican-logo_tg9meu.jpg",
     outcomes: ["Chartered Accountant (ACA)", "ICAN Fellow (FCA)", "CFO & Finance Director roles"],
   },
   {
@@ -34,7 +36,8 @@ const programmes = [
     duration: "18–48 months", mode: "In-person & Online",
     levels: ["Applied Knowledge", "Applied Skills", "Strategic Professional"],
     badge: "International", badgeVariant: "blue" as const,
-    href: "/courses/acca", icon: "🌍",
+    href: "/courses/acca",
+    icon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552629/ACCA_logo.svg_osfbx1.webp",
     outcomes: ["ACCA Affiliate", "FCCA Member", "International Finance Careers"],
   },
   {
@@ -45,7 +48,8 @@ const programmes = [
     duration: "12–24 months", mode: "In-person & Online",
     levels: ["Qualifying", "Professional"],
     badge: "Tax Specialist", badgeVariant: "green" as const,
-    href: "/courses/citn", icon: "⚖️",
+    href: "/courses/citn",
+    icon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552741/CITN-logo_rqc5j5.jpg",
     outcomes: ["Associate Tax Member", "FCTI Fellow", "Tax Manager & Consultant roles"],
   },
   {
@@ -56,7 +60,8 @@ const programmes = [
     duration: "6–18 months", mode: "In-person & Online",
     levels: ["Foundation", "Intermediate", "Final"],
     badge: "Entry Level", badgeVariant: "gray" as const,
-    href: "/courses/ats", icon: "📊",
+    href: "/courses/ats",
+    icon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784553799/ATSWB-logo_pkmnpp.jpg",
     outcomes: ["Accounting Technician Certificate", "ICAN Exemptions", "Bookkeeping & Finance Roles"],
   },
   {
@@ -67,7 +72,8 @@ const programmes = [
     duration: "6–12 months", mode: "In-person & Online",
     levels: ["Single Examination"],
     badge: "IT Audit", badgeVariant: "blue" as const,
-    href: "/courses/cisa", icon: "💻",
+    href: "/courses/cisa",
+    icon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552746/CISA-logo_emfhdi.png",
     outcomes: ["CISA Certification", "IT Audit Manager", "IS Governance Specialist"],
   },
   {
@@ -78,7 +84,8 @@ const programmes = [
     duration: "3–6 months", mode: "Weekends & Online",
     levels: ["Certificate", "Diploma"],
     badge: "ACCA Accredited", badgeVariant: "gold" as const,
-    href: "/courses/ifrs-diploma", icon: "📋",
+    href: "/courses/ifrs-diploma",
+    icon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552753/ifrs-logo_ellqno.svg",
     outcomes: ["Dip IFRS Qualification", "IFRS Reporting Expertise", "Multinational Finance Roles"],
   },
   {
@@ -89,7 +96,8 @@ const programmes = [
     duration: "Flexible", mode: "On-site & Online",
     levels: ["Customised to your organisation"],
     badge: "For Organisations", badgeVariant: "gray" as const,
-    href: "/corporate", icon: "🏢",
+    href: "/corporate",
+    icon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552599/ican-logo_tg9meu.jpg",
     outcomes: ["Qualified Finance Teams", "Regulatory Compliance", "Improved Organisational Performance"],
   },
   {
@@ -100,7 +108,8 @@ const programmes = [
     duration: "Ongoing", mode: "Advisory",
     levels: ["Advisory Services"],
     badge: "Advisory", badgeVariant: "blue" as const,
-    href: "/courses/consulting", icon: "📈",
+    href: "/courses/consulting",
+    icon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552599/ican-logo_tg9meu.jpg",
     outcomes: ["Improved Financial Performance", "Tax Efficiency", "Strategic Clarity"],
   },
 ];
@@ -118,7 +127,7 @@ export default function CoursesPage() {
             description="From accounting technician to chartered accountant, international to local
         qualifications — we offer structured tuition for every stage of your professional journey."
             slides={[
-              { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423630/IMG-20260716-WA0007_r0isob.jpg", alt: "University students studying together" },
+              { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "University students studying together" },
               { id: 2, src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85", alt: "Professional accounting class" },
               { id: 3, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
             ]}
@@ -135,8 +144,8 @@ export default function CoursesPage() {
                 >
                   <div className="grid md:grid-cols-[auto_1fr_auto] gap-6 p-7 items-start">
                     {/* Icon */}
-                    <div className="w-14 h-14 bg-[#EFF4FF] rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
-                      {prog.icon}
+                    <div className="w-14 h-14 bg-white rounded-2xl border border-[#E9ECEF] shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden p-1">
+                      <ProgramIcon icon={prog.icon} title={prog.title} />
                     </div>
 
                     {/* Main content */}
@@ -214,7 +223,7 @@ export default function CoursesPage() {
           </div>
         </section>
 
-        <NewsletterSection />
+        {/* <NewsletterSection /> */}
       </main>
       <Footer />
     </>
