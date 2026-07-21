@@ -97,14 +97,14 @@ export default function TestimonialsPage() {
 
         {/* Hero */}
         <PageHero
-  label="Success Stories"
+  // label="Success Stories"
   title="Thousands of Professionals. One Proven Path."
   description="PIN graduates are chartered accountants, tax managers, IT auditors, and finance
               directors at Nigeria&apos;s leading organisations. These are their stories."
   slides={[
-    { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784557870/Purple_Abstract_Graphic_Design_LinkedIn_Article_Cover_Image_1_lle3mb.png", alt: "University students studying together" },
-    { id: 2, src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85", alt: "Professional accounting class" },
-    { id: 3, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
+    { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784481889/wmremove-transformed_3_ujyrty.jpg", alt: "University students studying together" },
+    { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784488319/pexels-rdne-7821702_1_1_xq4cuh.jpg", alt: "Professional accounting class" },
+    { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "Corporate learning session" },
   ]}
 />
 
