@@ -10,9 +10,10 @@ interface PageHeroProps {
   title: string;
   description: string;
   slides: Slide[];
+  children?: React.ReactNode;
 }
 
-export default function PageHero({ label, title, description, slides }: PageHeroProps) {
+export default function PageHero({ label, title, description, slides, children }: PageHeroProps) {
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -89,6 +90,7 @@ export default function PageHero({ label, title, description, slides }: PageHero
           {title}
         </h1>
         <p className="text-white/75 text-lg max-w-2xl mx-auto leading-relaxed">{description}</p>
+        {children && <div className="mt-8">{children}</div>}
       </div>
 
       {/* Pagination dots — only shown if more than one slide */}

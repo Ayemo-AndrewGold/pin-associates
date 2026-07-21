@@ -63,8 +63,8 @@ export default function BlogPage() {
           title="Knowledge That Helps You Pass and Grow"
           description="Founded in 2009, PIN Consultancy Services has grown into one of Nigeria's most trusted professional examination tuition providers with over 5,000 graduates and a proven 87% first-attempt pass rate."
           slides={[
-            { id: 1, src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=85", alt: "University students studying together" },
-            { id: 2, src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85", alt: "Professional accounting class" },
+            { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784557870/Purple_Abstract_Graphic_Design_LinkedIn_Article_Cover_Image_1_lle3mb.png", alt: "University students studying together" },
+            { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "Professional accounting class" },
             { id: 3, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
           ]}
         />

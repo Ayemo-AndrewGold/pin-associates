@@ -13,6 +13,25 @@ export const metadata: Metadata = {
     "PIN Consultancy Services provides bespoke professional development, accounting advisory, tax consulting, and workforce training for organisations across Nigeria.",
 };
 
+const heroSlides = [
+    {
+    id: 1,
+    src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=85",
+    alt: "Corporate advisory meeting",
+  },
+  {
+    id: 2,
+    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=85",
+    alt: "Business professionals in a corporate training session",
+  },
+  {
+    id: 3,
+    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85",
+    alt: "Finance team in a professional workshop",
+  },
+
+];
+
 const services = [
   {
     icon: Users, title: "Workforce Development Training",
@@ -59,36 +78,27 @@ export default function CorporatePage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section
-          className="relative pt-40 pb-20"
-          style={{ background: "linear-gradient(135deg, #0F2055 0%, #1a3070 50%, #152D6E 100%)" }}
+        <PageHero
+          label="Corporate Services"
+          title="Building Capable, Compliant Organisations"
+          description="PIN Consultancy Services partners with leading Nigerian organisations to develop finance teams, improve compliance, and deliver strategic business advisory."
+          slides={heroSlides}
         >
-          <div className="container-pin relative z-10 text-center">
-            <span className="section-label section-label-gold mb-6 inline-flex">Corporate Services</span>
-            <h1 className="font-heading font-extrabold text-white text-4xl md:text-5xl leading-tight mb-5">
-              Building Capable, Compliant Organisations
-            </h1>
-            <p className="text-white/65 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-              PIN Consultancy Services partners with leading Nigerian organisations to develop
-              finance teams, improve compliance, and deliver strategic business advisory.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact?type=corporate" className="inline-flex items-center gap-2 bg-[#F4C430] text-[#152D6E] font-bold text-base px-8 py-4 rounded-2xl hover:bg-[#D4A820] transition-all shadow-lg">
-                Request a Proposal <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a href="tel:+2348000000000" className="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-2xl hover:bg-white/15 transition-all">
-                <Phone className="w-4 h-4" /> Call Us
-              </a>
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact?type=corporate"
+              className="inline-flex items-center gap-2 bg-[#F4C430] text-[#152D6E] font-bold text-base px-8 py-4 rounded-2xl hover:bg-[#D4A820] transition-all shadow-lg"
+            >
+              Request a Proposal <ArrowRight className="w-4 h-4" />
+            </Link>
+            <a
+              href="tel:+2348000000000"
+              className="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-2xl hover:bg-white/20 transition-all"
+            >
+              <Phone className="w-4 h-4" /> Call Us
+            </a>
           </div>
-          <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
-            <svg viewBox="0 0 1440 40" fill="none" className="w-full">
-              <path d="M0 40 L0 20 Q720 0 1440 20 L1440 40 Z" fill="white" />
-            </svg>
-          </div>
-        </section>
-
-        
+        </PageHero>
 
         {/* Services */}
         <section className="section-py bg-white">

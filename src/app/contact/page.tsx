@@ -32,9 +32,9 @@ export default function ContactPage() {
           description=" Whether you&apos;re ready to enrol, have a question about a programme, or want to discuss
                       corporate training our team is here and responsive."
           slides={[
-            { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784423630/IMG-20260716-WA0007_r0isob.jpg", alt: "University students studying together" },
-            { id: 2, src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&q=85", alt: "Professional accounting class" },
-            { id: 3, src: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=1600&q=85", alt: "Corporate learning session" },
+            { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613463/8_xzeshb.png", alt: "University students studying together" },
+            { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784557870/Purple_Abstract_Graphic_Design_LinkedIn_Article_Cover_Image_1_lle3mb.png", alt: "Professional accounting class" },
+            { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613463/7_czosms.png", alt: "Corporate learning session" },
           ]}
         />
 

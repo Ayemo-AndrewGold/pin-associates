@@ -8,6 +8,34 @@ import {
   Calendar, ChevronLeft, ChevronRight,
 } from "lucide-react";
 
+/* ── Circular avatar for floating cards ─────────────── */
+function FloatingAvatar({
+  image, initials, color,
+}: { image?: string; initials: string; color: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (image && !failed) {
+    return (
+      <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-sm">
+        <img
+          src={image}
+          alt={initials}
+          onError={() => setFailed(true)}
+          className="w-full h-full object-cover object-top"
+        />
+      </div>
+    );
+  }
+  return (
+    <div
+      className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 border-2 border-white shadow-sm"
+      style={{ backgroundColor: color }}
+    >
+      {initials}
+    </div>
+  );
+}
+
 const badges = [
   { icon: Users,      value: "5,000+", label: "Students Trained" },
   { icon: TrendingUp, value: "87%",    label: "Pass Rate" },
@@ -16,30 +44,42 @@ const badges = [
 ];
 
 const floatingCards = [
-  { id: 1, name: "Adaeze Okonkwo", exam: "ICAN Final Level",  result: "Passed First Attempt", initials: "AO", color: "bg-[#1E3A8A]" },
-  { id: 2, name: "Emeka Nwosu",    exam: "ACCA Professional", result: "Distinction",             initials: "EN", color: "bg-[#16A34A]" },
+  {
+    id: 1,
+    name: "Adaeze Okonkwo",
+    exam: "ICAN Final Level",
+    result: "Passed First Attempt",
+    initials: "AO",
+    color: "#1E3A8A",
+    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=120&q=80",
+  },
+  {
+    id: 2,
+    name: "Emeka Nwosu",
+    exam: "ACCA Professional",
+    result: "Distinction",
+    initials: "EN",
+    color: "#16A34A",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&q=80",
+  },
 ];
 
 const bgSlides = [
-  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784488319/pexels-rdne-7821702_1_1_xq4cuh.jpg", alt: "Professional accounting class" },
-  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "Corporate learning session" },
-  // { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784489637/pexels-rdne-7821685_1_1_pitkbm.jpg", alt: "Graduation and professional success" },
-  // { id: 4, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784488680/pexels-pavel-danilyuk-7654129_1_1_l7olra.jpg", alt: "Professionals reviewing documents" },
+  
+  { id: 1, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613464/Blue_Futuristic_Technology_LinkedIn_Background_Photo_3_l4mhqd.png", alt: "Graduation and professional success" },
+  { id: 2, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784557870/Purple_Abstract_Graphic_Design_LinkedIn_Article_Cover_Image_1_lle3mb.png", alt: "Professional accounting class" },
+  { id: 3, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784484978/wmremove-transformed_1_1_el1lye.jpg", alt: "Corporate learning session" },
+  { id: 4, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784613463/7_czosms.png", alt: "Graduation and professional success" },
+  { id: 5, src: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784614901/Blue_Futuristic_Technology_LinkedIn_Background_Photo_2_1_xubyb5.png", alt: "Professionals reviewing documents" },
 ];
 
-const cardSlides = [
-  { id: 1, src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=85", alt: "Students studying at PIN Consultancy" },
-  { id: 2, src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=700&q=85", alt: "Student reviewing notes before exam" },
-  { id: 3, src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=700&q=85", alt: "Graduate celebrating exam success" },
-];
+const cardVideoSrc = "https://res.cloudinary.com/yaovkmpi/video/upload/v1784550042/Pin_Associates_commercial_Nigeri__202607201318_lwmf56.mp4";
 
 export default function HeroSection() {
   const [bgIdx,   setBgIdx]   = useState(0);
-  const [cardIdx, setCardIdx] = useState(0);
   const [paused,  setPaused]  = useState(false);
 
-  const bgTimer   = useRef<ReturnType<typeof setInterval> | null>(null);
-  const cardTimer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const bgTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const goTo   = useCallback((i: number) => setBgIdx(((i % bgSlides.length) + bgSlides.length) % bgSlides.length), []);
   const bgNext = useCallback(() => goTo(bgIdx + 1), [bgIdx, goTo]);
@@ -50,12 +90,6 @@ export default function HeroSection() {
     bgTimer.current = setInterval(bgNext, 6000);
     return () => { if (bgTimer.current) clearInterval(bgTimer.current); };
   }, [paused, bgNext]);
-
-  useEffect(() => {
-    if (paused) return;
-    cardTimer.current = setInterval(() => setCardIdx((i) => (i + 1) % cardSlides.length), 4500);
-    return () => { if (cardTimer.current) clearInterval(cardTimer.current); };
-  }, [paused]);
 
   return (
     <section
@@ -289,54 +323,36 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT: image card — desktop only ── */}
+          {/* ── RIGHT: video card — desktop only ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative justify-center hidden lg:flex"
           >
-            {/* Image card */}
+            {/* Video card */}
             <div
-              className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden"
+              className="relative w-full max-w-md aspect-[4/4] rounded-3xl overflow-hidden"
               style={{ boxShadow: "0 32px 80px rgba(0,0,0,0.5),0 8px 32px rgba(0,0,0,0.3)" }}
             >
-              <AnimatePresence initial={false}>
-                <motion.div
-                  key={cardSlides[cardIdx].id}
-                  className="absolute inset-0 w-full h-full"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1, ease: "easeInOut" }}
-                >
-                  <img
-                    src={cardSlides[cardIdx].src}
-                    alt={cardSlides[cardIdx].alt}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </motion.div>
-              </AnimatePresence>
-
-              <div
-                className="absolute inset-0"
-                style={{ background: "linear-gradient(180deg,transparent 40%,rgba(11,20,45,0.90) 100%)" }}
+              {/* Looping background video — slowed to 0.5× */}
+              <video
+                ref={(el) => { if (el) el.playbackRate = 0.5; }}
+                src={cardVideoSrc}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
 
-              {/* Card dots */}
-              <div className="absolute bottom-[4.5rem] left-1/2 -translate-x-1/2 z-10 flex items-center gap-1.5">
-                {cardSlides.map((s, i) => (
-                  <button
-                    key={s.id}
-                    aria-label={`Card image ${i + 1}`}
-                    onClick={() => setCardIdx(i)}
-                    className={`rounded-full transition-all duration-300 ${
-                      i === cardIdx ? "w-5 h-1.5 bg-[#F4C430]" : "w-1.5 h-1.5 bg-white/50 hover:bg-white/80"
-                    }`}
-                  />
-                ))}
-              </div>
+              {/* Gradient scrim over the video */}
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(180deg,transparent 38%,rgba(11,20,45,0.92) 100%)" }}
+              />
 
+              {/* Bottom caption */}
               <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                 <p className="text-white/55 text-[11px] font-semibold uppercase tracking-wider mb-1">
                   Our Mission
@@ -345,19 +361,32 @@ export default function HeroSection() {
                   Transforming students into certified professionals.
                 </p>
               </div>
+
+              {/* Live indicator */}
+              <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5
+                              bg-black/30 backdrop-blur-sm border border-white/15
+                              px-2.5 py-1 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                <span className="text-white text-[10px] font-semibold uppercase tracking-wider">
+                  Live Classes
+                </span>
+              </div>
             </div>
 
-            {/* Floating card 1 */}
+            {/* Floating card 1 — with real photo */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -left-10 top-14 bg-white rounded-2xl p-4 shadow-xl w-52"
+              className="absolute -left-10 top-10 bg-white rounded-2xl py-2.5 px-3 shadow-xl w-52"
             >
               <div className="flex items-center gap-3 mb-2">
-                <div className={`w-9 h-9 ${floatingCards[0].color} rounded-xl flex items-center justify-center text-white text-xs font-bold flex-shrink-0`}>
-                  {floatingCards[0].initials}
-                </div>
+                {/* Circular photo with fallback */}
+                <FloatingAvatar
+                  image={floatingCards[0].image}
+                  initials={floatingCards[0].initials}
+                  color={floatingCards[0].color}
+                />
                 <div className="min-w-0">
                   <p className="text-xs font-semibold text-[#222222] truncate">{floatingCards[0].name}</p>
                   <p className="text-[10px] text-[#6C757D] truncate">{floatingCards[0].exam}</p>
@@ -369,17 +398,19 @@ export default function HeroSection() {
               </div>
             </motion.div>
 
-            {/* Floating card 2 */}
+            {/* Floating card 2 — with real photo */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.75 }}
-              className="absolute -right-8 bottom-20 bg-white rounded-2xl p-4 shadow-xl w-52"
+              className="absolute -right-8 bottom-20 bg-white rounded-2xl py-2.5 px-3 shadow-xl w-52"
             >
               <div className="flex items-center gap-3 mb-2">
-                <div className={`w-9 h-9 ${floatingCards[1].color} rounded-xl flex items-center justify-center text-white text-xs font-bold flex-shrink-0`}>
-                  {floatingCards[1].initials}
-                </div>
+                <FloatingAvatar
+                  image={floatingCards[1].image}
+                  initials={floatingCards[1].initials}
+                  color={floatingCards[1].color}
+                />
                 <div className="min-w-0">
                   <p className="text-xs font-semibold text-[#222222] truncate">{floatingCards[1].name}</p>
                   <p className="text-[10px] text-[#6C757D] truncate">{floatingCards[1].exam}</p>

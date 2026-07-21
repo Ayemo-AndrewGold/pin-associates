@@ -13,12 +13,12 @@ const stats = [
 ];
 
 const bodies = [
-  { abbr: "ICAN",  name: "Inst. of Chartered Accountants of Nigeria", favicon: "https://www.ican.org.ng/favicon.ico" },
+  { abbr: "ICAN",  name: "Inst. of Chartered Accountants of Nigeria", favicon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552586/ican-logo_idp3as.jpg" },
   { abbr: "ACCA",  name: "Association of Chartered Certified Accountants", favicon: "https://www.accaglobal.com/favicon.ico" },
-  { abbr: "CITN",  name: "Chartered Institute of Taxation of Nigeria", favicon: "https://www.citn.org/favicon.ico" },
+  { abbr: "CITN",  name: "Chartered Institute of Taxation of Nigeria", favicon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784552741/CITN-logo_rqc5j5.jpg" },
   { abbr: "ISACA", name: "Information Systems Audit & Control Assoc.", favicon: "https://www.isaca.org/favicon.ico" },
-  { abbr: "ATS",   name: "Accounting Technicians Scheme West Africa",  favicon: "https://www.ican.org.ng/favicon.ico" },
-  { abbr: "IASB",  name: "International Accounting Standards Board",   favicon: "https://www.ifrs.org/favicon.ico" },
+  { abbr: "ATS",   name: "Accounting Technicians Scheme West Africa",  favicon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784553799/ATSWB-logo_pkmnpp.jpg" },
+  { abbr: "IASB",  name: "International Accounting Standards Board",   favicon: "https://res.cloudinary.com/yaovkmpi/image/upload/v1784553575/IASB-logo_bpx3wt.webp" },
 ];
 
 /* ─── CountUp ───────────────────────────────────────── */

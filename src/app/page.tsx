@@ -38,7 +38,7 @@ export default function HomePage() {
         <FAQSection />
         <BlogSection />
         <ContactSection />
-        <NewsletterSection />
+        {/* <NewsletterSection /> */}
       </main>
       <Footer />
     </div>
