@@ -27,7 +27,7 @@ export default function ContactPage() {
         {/* Hero */}
 
         <PageHero
-          label="Get in Touch"
+          // label="Get in Touch"
           title="We&apos;d Love to Hear From You"
           description=" Whether you&apos;re ready to enrol, have a question about a programme, or want to discuss
                       corporate training our team is here and responsive."
