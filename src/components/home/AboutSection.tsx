@@ -79,7 +79,7 @@ export default function AboutSection() {
             >
               {/* Image — position:absolute fills the padding-top box 100% */}
               <img
-                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=85"
+                src="https://res.cloudinary.com/yaovkmpi/image/upload/v1784423630/IMG-20260716-WA0007_r0isob.jpg"
                 alt="PIN Consultancy professional class in session"
                 style={{
                   position: "absolute",
